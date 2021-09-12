@@ -1,12 +1,12 @@
 package com.otus.pantikov.dz2;
 
-public class Duck extends Animal_actions {
+public class Duck extends Animal {
 
     @Override
-    public Object say() {
+    public void say() {
         System.out.println("Кря");
 
-        return "Кря";
+
     }
 
 

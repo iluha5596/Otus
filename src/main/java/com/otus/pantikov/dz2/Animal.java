@@ -10,13 +10,7 @@ public class Animal {
     private double weight;
     private String color;
     private String years;
-    private String Says;
-    public ArrayList list_animal;
 
-    public Animal() {
-        list_animal = new ArrayList<>();
-
-    }
 
 
     public String getName() {
@@ -59,35 +53,43 @@ public class Animal {
         this.years = years;
     }
 
-    //Задание 1
-//    @Override
-//    public String toString() {
-//        if (age > 4) {
-//
-//            years = "лет";
-//        } else {
-//
-//            years = "года";
-//        }
-//        return "Возврат строки:" + " Привет! меня зовут " + name + ", мне " + age + " " + years + ", я вешу - " + weight + " кг" + ", мой цвет - " + color;
-//    }
+    public void say() {
 
+        System.out.println("Я говорю");
+    }
+
+    public void go() {
+
+        System.out.println("Я иду");
+    }
+
+    public void eat() {
+
+        System.out.println("Я ем");
+    }
+
+    public void drink() {
+
+        System.out.println("Я пью");
+    }
+
+    //Задание 1
     @Override
     public String toString() {
+        if (age > 4) {
 
-        return "Возврат строки:" + " Привет! меня зовут " + list_animal.get(0) + ", мне " + list_animal.get(1) + " " +  ", я вешу - " + list_animal.get(2) + " кг" + ", мой цвет - " + list_animal.get(3) + " голос: " + list_animal.get(4);
+            years = "лет";
+        } else {
 
+            years = "года";
+        }
+
+        return "Возврат строки:" + " Привет! меня зовут " + name + ", мне " + age + " " + years + ", я вешу - " + weight + " кг" + ", мой цвет - " + color;
     }
 
-
-    public String getSays() {
-        return Says;
-    }
-
-    public void setSays(String says) {
-        Says = says;
-    }
 
 
 }
+
+
 

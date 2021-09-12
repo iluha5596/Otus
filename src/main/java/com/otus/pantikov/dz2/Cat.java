@@ -1,11 +1,11 @@
 package com.otus.pantikov.dz2;
 
-public class Cat extends Animal_actions {
+public class Cat extends Animal {
 
     @Override
-    public Object say() {
+    public void say() {
         System.out.println("Мяу");
 
-        return "Мяу";
+
     }
 }
