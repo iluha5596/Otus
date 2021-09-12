@@ -11,7 +11,6 @@ public class Runner {
 
         Animal animals = new Animal();
 
-//Задание 1
         System.out.println("Задание 1: ");
 
         animals.setName("Бобик");
@@ -39,7 +38,6 @@ public class Runner {
         Animal actions_drink = new Animal();
         actions_drink.drink();
 
-//Задание 2-5
         System.out.println("Задание 2-5: ");
         Animal say_cat = new Cat();
         say_cat.say();
@@ -53,7 +51,6 @@ public class Runner {
         Duck.DuckFly duck_fly = new Duck.DuckFly();
         duck_fly.swim();
 
-//Задание 6
         System.out.println("Задание 6: ");
 
         List<Animal> animalList = new ArrayList<>();
