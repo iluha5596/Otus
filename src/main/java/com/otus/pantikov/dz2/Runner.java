@@ -74,6 +74,7 @@ public class Runner {
                         break;
                     case CAT:
                         Cat myCat = new Cat();
+                        say_cat.say();
 
                         System.out.print("Введите Имя: ");
                         String name = scan.next();
@@ -92,11 +93,11 @@ public class Runner {
                         myCat.setColor(color);
 
                         animalList.add(myCat);
-                        say_cat.say();
 
                         break;
                     case DUCK:
                         Cat myDuck = new Cat();
+                        say_duck.say();
 
                         System.out.print("Введите Имя: ");
                         name = scan.next();
@@ -115,12 +116,11 @@ public class Runner {
                         myDuck.setColor(color);
 
                         animalList.add(myDuck);
-                        Animal say_dock = new Duck();
-                        say_dock.say();
 
                         break;
                     case DOG:
                         Cat myDog = new Cat();
+                        say_dog.say();
 
                         System.out.print("Введите Имя: ");
                         name = scan.next();
@@ -139,7 +139,7 @@ public class Runner {
                         myDog.setColor(color);
 
                         animalList.add(myDog);
-                        say_dog.say();
+
 
                         break;
                     case LIST:
