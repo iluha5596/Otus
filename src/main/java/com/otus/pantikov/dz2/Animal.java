@@ -73,7 +73,6 @@ public class Animal {
         System.out.println("Я пью");
     }
 
-    //Задание 1
     @Override
     public String toString() {
         if (age > 4) {

@@ -96,7 +96,6 @@ public class Runner {
 
                         animalList.add(myCat);
                         say_cat.say();
-                        animalList.add(say_cat);
 
                         break;
                     case DUCK:
@@ -121,7 +120,6 @@ public class Runner {
                         animalList.add(myDuck);
                         Animal say_dock = new Duck();
                         say_dock.say();
-                        animalList.add(say_dock);
 
                         break;
                     case DOG:
@@ -145,7 +143,6 @@ public class Runner {
 
                         animalList.add(myDog);
                         say_dog.say();
-                        animalList.add(say_dog);
 
                         break;
                     case LIST:
@@ -156,11 +153,8 @@ public class Runner {
                         break;
 
                     case EXIT:
-                        System.out.println("Завершаем");
+                        System.out.println("Завершение программы");
                         return;
-
-                    default:
-                            System.out.println("Ввели неверную команду");
 
             }
 
