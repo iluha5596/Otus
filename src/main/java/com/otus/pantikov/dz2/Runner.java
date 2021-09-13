@@ -10,48 +10,10 @@ public class Runner {
     public static void main(String[] args) {
 
         Animal animals = new Animal();
-
-        System.out.println("Задание 1: ");
-
-        animals.setName("Бобик");
-        animals.setAge(5);
-        animals.setWeight(15);
-        animals.setColor("чёрный");
-        System.out.println(animals);
-
-        Animal secondAnimals = new Animal();
-        secondAnimals.setName("Бобик");
-        secondAnimals.setAge(4);
-        secondAnimals.setWeight(20.5);
-        secondAnimals.setColor("белый");
-        System.out.println(secondAnimals);
-
-        Animal actions_say = new Animal();
-        actions_say.say();
-
-        Animal actions_go = new Animal();
-        actions_go.go();
-
-        Animal actions_eat = new Animal();
-        actions_eat.eat();
-
-        Animal actions_drink = new Animal();
-        actions_drink.drink();
-
-        System.out.println("Задание 2-5: ");
         Animal say_cat = new Cat();
-        say_cat.say();
-
         Animal say_dog = new Dog();
-        say_dog.say();
-
         Animal say_duck = new Duck();
-        say_duck.say();
 
-        Duck.DuckFly duck_fly = new Duck.DuckFly();
-        duck_fly.swim();
-
-        System.out.println("Задание 6: ");
 
         List<Animal> animalList = new ArrayList<>();
 
