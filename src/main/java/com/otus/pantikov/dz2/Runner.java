@@ -7,13 +7,13 @@ import java.util.Scanner;
 
 public class Runner {
 
+
     public static void main(String[] args) {
 
         Animal animals = new Animal();
         Animal say_cat = new Cat();
         Animal say_dog = new Dog();
         Animal say_duck = new Duck();
-
 
         List<Animal> animalList = new ArrayList<>();
 
@@ -58,7 +58,7 @@ public class Runner {
 
                         break;
                     case DUCK:
-                        Cat myDuck = new Cat();
+                        Duck myDuck = new Duck();
                         say_duck.say();
 
                         System.out.print("Введите Имя: ");
@@ -81,7 +81,7 @@ public class Runner {
 
                         break;
                     case DOG:
-                        Cat myDog = new Cat();
+                        Dog myDog = new Dog();
                         say_dog.say();
 
                         System.out.print("Введите Имя: ");
@@ -102,7 +102,6 @@ public class Runner {
 
                         animalList.add(myDog);
 
-
                         break;
                     case LIST:
 
@@ -114,6 +113,9 @@ public class Runner {
                     case EXIT:
                         System.out.println("Завершение программы");
                         return;
+
+
+
 
             }
 
