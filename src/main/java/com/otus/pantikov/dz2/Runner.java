@@ -10,11 +10,6 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        Animal animals = new Animal();
-        Animal say_cat = new Cat();
-        Animal say_dog = new Dog();
-        Animal say_duck = new Duck();
-
         List<Animal> animalList = new ArrayList<>();
 
         Scanner scan = new Scanner(System.in);
@@ -36,7 +31,7 @@ public class Runner {
                         break;
                     case CAT:
                         Cat myCat = new Cat();
-                        say_cat.say();
+                        myCat.say();
 
                         System.out.print("Введите Имя: ");
                         String name = scan.next();
@@ -59,7 +54,7 @@ public class Runner {
                         break;
                     case DUCK:
                         Duck myDuck = new Duck();
-                        say_duck.say();
+                        myDuck.say();
 
                         System.out.print("Введите Имя: ");
                         name = scan.next();
@@ -82,7 +77,7 @@ public class Runner {
                         break;
                     case DOG:
                         Dog myDog = new Dog();
-                        say_dog.say();
+                        myDog.say();
 
                         System.out.print("Введите Имя: ");
                         name = scan.next();
