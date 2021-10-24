@@ -1,0 +1,8 @@
+com/otus/pantikov/dz3/MySQL.java
+ com.otus.pantikov.dz3.MySQL
+com/otus/pantikov/dz3/Curator.java
+ com.otus.pantikov.dz3.Curator
+com/otus/pantikov/dz3/Group.java
+ com.otus.pantikov.dz3.Group
+com/otus/pantikov/dz3/Student.java
+ com.otus.pantikov.dz3.Student
