@@ -3,8 +3,11 @@ import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,16 +20,17 @@ public class Runner {
 
     private org.apache.logging.log4j.Logger logger = LogManager.getLogger(Logger.class);
     protected static WebDriver driver;
+    private WebDriverWait wait;
 
     @BeforeClass
-    public void StartUp() {
+    public void startUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         logger.info("Драйвер поднят");
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.MICROSECONDS);
+        wait = new WebDriverWait(driver, 10);
     }
      @AfterClass
-    public void End() {
+    public void end() {
         if (driver!=null)
             driver.quit();
      }
@@ -34,30 +38,29 @@ public class Runner {
     private void auth() throws InterruptedException{
         driver.get("https://otus.ru");
         logger.info("Сайт открыт");
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class=\"header2__auth js-open-modal\"]")));
         driver.findElement(By.xpath("//button[@class=\"header2__auth js-open-modal\"]")).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("(//input[@placeholder=\"Электронная почта\"])[3]")).sendKeys("pantik96@mail.ru");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@placeholder=\"Электронная почта\"])[3]")));
+        driver.findElement(By.xpath("(//input[@placeholder=\"Электронная почта\"])[3]")).sendKeys("@mail.ru");
         driver.findElement(By.xpath("//input[@type=\"password\"]")).sendKeys("qwerty123");
         driver.findElement(By.xpath("(//button[@type=\"submit\"])[3]")).click();
         logger.info("Авторизация прошла");
     }
 
      @Test
-    public void Duckduckgo() throws InterruptedException {
+    public void duckduckgo() throws InterruptedException {
          driver.quit();
          ChromeOptions options = new ChromeOptions();
          options.addArguments("headless");
          driver = new ChromeDriver(options);
          driver.get("https://duckduckgo.com/");
-         Thread.sleep(2000);
          driver.findElement(By.xpath("//input[@name=\"q\"]")).sendKeys("Отус", Keys.ENTER);
          Assert.assertEquals("Онлайн‑курсы для профессионалов, дистанционное обучение...", driver.findElement(By.xpath("//a[text() = \"Онлайн‑курсы для профессионалов, дистанционное обучение...\"]")).getText());
          logger.info("В поисковой выдаче первый результат 'Онлайн‑курсы для профессионалов, дистанционное обучение...'");
     }
 
     @Test
-    public void ModalWindow() throws InterruptedException {
+    public void modalWindow() throws InterruptedException {
         driver.quit();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--kiosk");
@@ -69,7 +72,7 @@ public class Runner {
     }
 
     @Test
-    public void Cookie() throws InterruptedException {
+    public void cookie() throws InterruptedException {
         auth();
         logger.info(driver.manage().getCookies());
         logger.info("Логи собраны");
